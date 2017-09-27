@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- INTRODUCTION -->
+<div id="introduction-wrapper" class="section">
+	<div class="row">
+	    <div class="col-5"></div>
+	    <div class="col-7">
+	        <div id="introduction-logo">Lorem Ipsum</div>
+	        <div id="introduction-description">
+	        	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	        </div>
+	    </div>
+	</div>
+	<div id="get-started-row" class="row">
+		<div class="col-12 text-center">
+			<button id="get-started-button" class="btn btn-primary navigation-button" data-direction="forward">Get Started<i class="fa fa-angle-double-down"></i></button>
+		</div>
+	</div>
+</div>
+
+<!-- DATASET MODE -->
+<div id="dataset-mode-wrapper" class="section">
+	<div class="row navigate-back-row"><div class="col-12"><span class="navigate-back-button"><i class="fa fa-caret-up"></i> Back</span></div></div>
+	<div id="dataset-mode-introduction" class="row">
+		<div class="col-12 text-center">
+			1. Add a Dataset
+		</div>
+	</div>
+	<div id="dataset-mode-selection" class="row">
+		<div class="col-3 offset-3">
+			<div class="dataset-mode-card"><i class="fa fa-search"></i></div>
+			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Search</p>Search thousands of RNA-seq and microarray datasets, ready to analyze</div>
+		</div>
+		<div class="col-3">
+			<div class="dataset-mode-card"><i class="fa fa-upload"></i></div>
+			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Upload</p>Upload your data, such as an expression matrix or sequencing reads</div>
+		</div>
+	</div>
+</div>
+
+<!-- DATASET SEARCH -->
+<div id="dataset-search-wrapper" class="section">
+	<div class="row navigate-back-row"><div class="col-12"><span class="navigate-back-button"><i class="fa fa-caret-up"></i> Back</span></div></div>
+	<div id="dataset-search-introduction" class="row">
+		<div class="col-12 text-center">
+			Search Datasets
+		</div>
+	</div>
+	<div id="dataset-search-row">
+		<div class="col-12 text-center">
+			<form id="dataset-search-form" class="form-inline">
+                  <input class="form-control" type="text" placeholder="Search...">
+                  <button class="btn" type="button"><i class="fa fa-search"></i></button>
+             </form>
+		</div>
+	</div>
+	{% if dataframe.index|length > 0 %}
+		<div id="dataset-results-row" class="row">
+			{% for index, rowData in dataframe.iterrows() %}
+				<div class="col-4 text-center">
+					<input type="radio" id="{{ rowData.dataset_accession }}" name="dataset_accession" class="dataset-radio-button">
+					<label for="{{ rowData.dataset_accession }}" class="dataset-radio-label">
+						<div class="row">
+							<div class="col-5 dataset-radio-image-col">
+								<img src="{{ url_for('static', filename='icons/{dataset_type}.png'.format(**rowData)) }}" class='dataset-radio-image'>
+							</div>
+							<div class="col-7 dataset-radio-info-col text-left">
+								<div class="dataset-radio-accession">{{ rowData['dataset_accession'] }}</div>
+								<div class="dataset-radio-samples">{{ rowData['samples'] }} samples</div>
+								<div class="dataset-radio-title">{{ rowData['dataset_title'] }}</div>
+							</div>
+						</div>
+					</label>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+<!-- 	<div id="dataset-mode-selection" class="row">
+		<div class="col-3 offset-3">
+			<div class="dataset-mode-card"><i class="fa fa-search"></i></div>
+			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Search</p>Search thousands of RNA-seq and microarray datasets, ready to analyze</div>
+		</div>
+		<div class="col-3">
+			<div class="dataset-mode-card"><i class="fa fa-upload"></i></div>
+			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Upload</p>Upload your data, such as an expression matrix or sequencing reads</div>
+		</div>
+	</div>
+ -->
+</div>
+
+
+{% endblock %}
