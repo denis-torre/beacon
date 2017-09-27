@@ -88,7 +88,7 @@ html {
 		}
 
 /*************************/
-/** DATASET SEARCH 
+/** DATASET MODE 
 /*************************/
 
 #dataset-mode-wrapper {
@@ -167,6 +167,15 @@ html {
 
 				#dataset-mode-selection .col-3:nth-child(1) .dataset-mode-text { padding-right: 55px; }
 				#dataset-mode-selection .col-3:nth-child(2) .dataset-mode-text { padding-left: 55px; }
+
+/*************************/
+/** DATASET MODE 
+/*************************/
+
+#upload-mode-wrapper {
+	display: none;
+	margin-top: 15px;
+}
 
 /*************************/
 /** DATASET SEARCH 

@@ -30,9 +30,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script type="text/javascript">
             $('#get-started-button').click(function(evt){$('#introduction-wrapper').hide();$('#dataset-mode-wrapper').show()});
+
             $('#dataset-mode-wrapper .navigate-back-button').click(function(evt){$('#dataset-mode-wrapper').hide();$('#introduction-wrapper').show()});
-            $('.dataset-mode-card .fa-search').click(function(evt){$('#dataset-mode-wrapper').hide();$('#dataset-search-wrapper').show();});
+            $('#search-dataset').click(function(evt){$('#dataset-mode-wrapper').hide();$('#dataset-search-wrapper').show();});
+            $('#upload-dataset').click(function(evt){$('#dataset-mode-wrapper').hide();$('#upload-mode-wrapper').show();});
             $('#dataset-search-wrapper .navigate-back-button').click(function(evt){$('#dataset-search-wrapper').hide();$('#dataset-mode-wrapper').show()});
+            $('#upload-mode-wrapper .navigate-back-button').click(function(evt){$('#upload-mode-wrapper').hide();$('#dataset-mode-wrapper').show()});
             // $('.navigation-button').click(function(evt){$currentSection=$(evt.target).parents('.section');$currentSection.hide();if($(evt.target).attr('data-direction')==='forward'){$currentSection.next().show()}else{$currentSection.prev().show()};})
         </script>
         {% block footer %}{% endblock %}

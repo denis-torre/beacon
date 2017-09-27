@@ -29,12 +29,32 @@
 	</div>
 	<div id="dataset-mode-selection" class="row">
 		<div class="col-3 offset-3">
-			<div class="dataset-mode-card"><i class="fa fa-search"></i></div>
+			<div id="search-dataset" class="dataset-mode-card"><i class="fa fa-search"></i></div>
 			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Search</p>Search thousands of RNA-seq and microarray datasets, ready to analyze</div>
 		</div>
 		<div class="col-3">
-			<div class="dataset-mode-card"><i class="fa fa-upload"></i></div>
+			<div id="upload-dataset" class="dataset-mode-card"><i class="fa fa-upload"></i></div>
 			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Upload</p>Upload your data, such as an expression matrix or sequencing reads</div>
+		</div>
+	</div>
+</div>
+
+<!-- UPLOAD MODE -->
+<div id="upload-mode-wrapper" class="section">
+	<div class="row navigate-back-row"><div class="col-12"><span class="navigate-back-button"><i class="fa fa-caret-up"></i> Back</span></div></div>
+	<div id="dataset-mode-introduction" class="row">
+		<div class="col-12 text-center">
+			Select Data Type
+		</div>
+	</div>
+	<div id="dataset-mode-selection" class="row">
+		<div class="col-3 offset-3">
+			<div id="table-data" class="dataset-mode-card"><i class="fa fa-table"></i></div>
+			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Expression Matrix</p>Tabular gene expression data, from microarray or RNA-seq experiments</div>
+		</div>
+		<div class="col-3">
+			<div id="read-data" class="dataset-mode-card"><i class="fa fa-bars"></i></div>
+			<div class="dataset-mode-text"><p class="dataset-mode-subtitle">Sequence Reads</p>FASTA or FASTQ read files from RNA-sequencing experiments</div>
 		</div>
 	</div>
 </div>

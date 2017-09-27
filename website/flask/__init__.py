@@ -57,7 +57,7 @@ app = Flask(__name__, static_url_path=os.path.join(entry_point, 'static'))
 def index():
 	dataframe = pd.read_table('static/datasets.txt')#url_for('static', filename='datasets.txt'))
 	print(dataframe)
-	return render_template('index.html', dataframe=dataframe)
+	return render_template('index.html', dataframe=False)
 
 
 #######################################################
